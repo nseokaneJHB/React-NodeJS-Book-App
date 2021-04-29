@@ -1,0 +1,75 @@
+// Font
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+// Screen Sizes
+$tablet: 750px;
+
+// Screen mixins
+@mixin tablet {
+	@media (min-width: #{$tablet}) {
+		@content;
+	}
+}
+
+* {
+	box-sizing: border-box;
+	transition: 2s;
+	padding: 0;
+	margin: 0;
+}
+
+.main{
+	flex-direction: column;
+	margin: 2rem auto 0;
+	display: flex;
+	width: 800px;
+	gap: 2rem;
+
+	.form{
+		justify-content: center;
+		align-items: center;
+		display: flex;
+
+		input{
+			margin-right: 20px;
+			width: 300px;
+		}
+
+		button{
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			width: 100px;
+		}
+	}
+
+	.card{
+		&:hover{
+			background-color: #80cbc33f;
+		}
+
+		&:first-child{
+			background-color: #57bbb1 !important;
+			margin-bottom: 1rem;
+		}
+
+		&:not(:first-child){
+			border-bottom: 1px solid rgba(0, 0, 0, 0.124);
+			box-shadow: none;
+		}
+
+		.action-icons{
+			justify-content: space-around;
+			display: flex;
+
+			i{
+				transition: transform .2s;
+			}
+
+			i:hover {
+				transform: scale(1.5);
+				cursor: pointer;
+			}
+		}
+	}
+}
